@@ -37,5 +37,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 git init
 git add README.md
 git commit -m "first commit"
-git remote add origin https://github.com/username/NewRepo.git
+git remote add origin https://github.com/trinhphuocbinh1993/next-app-zendvn.git
 git push -u origin master
