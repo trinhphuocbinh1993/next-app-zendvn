@@ -1,0 +1,23 @@
+[
+  {
+    "slug": "dog-1",
+    "title": "Dog 1",
+    "image": "file-20200309-118956-1cqvm6j.jpg",
+    "excerpt": "Everything I know I learned from dogs.",
+    "date": "2022-12-29"
+  },
+  {
+    "slug": "dog-2",
+    "title": "Dog 2",
+    "image": "5f90aea1c672403378adc8eb.jpg",
+    "excerpt": "Dogs do speak, but only to those who know how to listen",
+    "date": "2021-11-02"
+  },
+  {
+    "slug": "dog-3",
+    "title": "Dog 3",
+    "image": "1915.jpg",
+    "excerpt": "Dogs do speak, but only to those who know how to listen",
+    "date": "2022-12-01"
+  }
+]

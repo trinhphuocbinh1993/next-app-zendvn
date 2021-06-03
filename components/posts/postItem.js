@@ -1,15 +1,15 @@
-import Link from "next/link";
+// import Link from "next/link";
 
-function PostItem(props) {
-  return (
-    <Link href="/">
-      <a>
-        <div>
-          <h1>{props.item.title}</h1>
-        </div>
-      </a>
-    </Link>
-  );
-}
+// function PostItem(props) {
+//   return (
+//     <Link href={`/posts/${props.item.slug}`}>
+//       <a>
+//         <div>
+//           <h1>{props.item.title}</h1>
+//         </div>
+//       </a>
+//     </Link>
+//   );
+// }
 
-export default PostItem;
+// export default PostItem;
