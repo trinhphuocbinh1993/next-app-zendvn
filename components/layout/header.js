@@ -43,6 +43,11 @@ export default function Header() {
                       Contact
                     </a>
                   </Link>
+                  <Link href="/contract">
+                    <a className="text-base font-medium text-gray-500 hover:text-gray-900">
+                      Contract
+                    </a>
+                  </Link>
                 </Popover.Group>
                 <div className="flex items-center md:ml-12">
                   <Link href="/signin">
@@ -103,6 +108,11 @@ export default function Header() {
                     <Link href="/contact">
                       <a className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
                         Contact
+                      </a>
+                    </Link>
+                    <Link href="/contract">
+                      <a className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
+                        Contract
                       </a>
                     </Link>
                   </div>
