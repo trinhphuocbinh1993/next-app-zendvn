@@ -4,7 +4,6 @@ import { Packer } from "docx";
 
 function ContractPage() {
   const [pdfInfo, setPdfInfo] = useState([]);
-  // const [docInfo, setDocInfo] = useState([]);
 
   function handleClickPdf(event) {
     event.preventDefault();
@@ -21,15 +20,33 @@ function ContractPage() {
       .then((blob) => {
         const file = new Blob([blob], { type: "application/pdf" });
         const fileURL = URL.createObjectURL(file);
-        // const link = document.createElement("a");
-        // link.href = fileURL;
-        // link.download = "fileName.pdf";
-        // // Append to html link element page
-        // document.body.appendChild(link);
-        // link.click();
-        // // Clean up and remove the link
-        // link.parentNode.removeChild(link);
-        // URL.revokeObjectURL(fileURL);
+        const link = document.createElement("a");
+        link.href = fileURL;
+        link.download = "fileName.pdf";
+        // Append to html link element page
+        document.body.appendChild(link);
+        link.click();
+        // Clean up and remove the link
+        link.parentNode.removeChild(link);
+        URL.revokeObjectURL(fileURL);
+      });
+  }
+
+  function handleClickViewPdf(event) {
+    event.preventDefault();
+    fetch("/api/pdf/pdfkit", {
+      method: "POST",
+      body: JSON.stringify({
+        content: encodeURIComponent("aaaaa"),
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.blob())
+      .then((blob) => {
+        const file = new Blob([blob], { type: "application/pdf" });
+        const fileURL = URL.createObjectURL(file);
         setPdfInfo(fileURL);
       });
   }
@@ -61,18 +78,25 @@ function ContractPage() {
     <div>
       {/* <Tabs /> */}
       <button
+        onClick={handleClickViewPdf}
+        type="button"
+        className="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+      >
+        Review pdf - render from server!
+      </button>
+      <button
         onClick={handleClickPdf}
         type="button"
-        className="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+        className="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
       >
-        Generate pdf !
+        Download pdf - render from server!
       </button>
       <button
         onClick={handleClickWord}
         type="button"
-        className="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+        className="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
       >
-        Generate doc !
+        Download doc - render from server !
       </button>
       {
         <iframe
