@@ -75,10 +75,10 @@ export default async (req, res) => {
     // content
     doc.moveDown();
     doc.text(
-      `Thank you very much for choosing T&K for your home improvement and we trust you are now enjoying the benefits of our products.\n\nWe note that the above amount remains outstanding and it would be appreciated if you can contact the office and make this payment by debit or credit card as soon as possible in order to enable us to complete your guarantee documentation.`,
-      {
-        align: "justify",
-      }
+      `Thank you very much for choosing T&K for your home improvement and we trust you are now enjoying the benefits of our products.\n\nWe note that the above amount remains outstanding and it would be appreciated if you can contact the office and make this payment by debit or credit card as soon as possible in order to enable us to complete your guarantee documentation.`
+      // {
+      //   align: "justify",
+      // }
     );
     // end
     doc.moveDown();

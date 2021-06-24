@@ -237,7 +237,7 @@ function createTextRunGray(text, bold) {
     text: text,
     bold: bold,
     font: "Calibri",
-    size: 15,
+    size: 20,
     color: "808080",
   });
 }

@@ -4,6 +4,7 @@ import { Document, Packer, Paragraph } from "docx";
 import Logo from "../../../components/docx-render-form/form-example-1/logo";
 import TextUnderLogo from "../../../components/docx-render-form/form-example-1/text-under-logo";
 import MainContent from "../../../components/docx-render-form/form-example-1/main-content";
+import Signature from "../../../components/docx-render-form/form-example-1/signature";
 
 export default async (req, res) => {
   if (req.method === "GET") {
@@ -20,6 +21,7 @@ export default async (req, res) => {
             new Paragraph(""),
             new Paragraph(""),
             new Paragraph(""),
+            new Paragraph(""),
             // text under logo
             TextUnderLogo,
             // enter
@@ -27,6 +29,7 @@ export default async (req, res) => {
             new Paragraph(""),
             // main content
             MainContent,
+            Signature,
           ],
         },
       ],

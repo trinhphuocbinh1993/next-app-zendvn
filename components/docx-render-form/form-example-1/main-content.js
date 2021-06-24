@@ -71,16 +71,15 @@ const contain = new Paragraph({
       `We note that the above amount remains outstanding and it would be appreciated if you can contact the office and make this payment by debit or credit card as soon as possible in order to enable us to complete your guarantee documentation.`,
       2
     ),
-    createTextRun(`Your sincerely.`, 1),
+    createTextRun(`Your sincerely.`, 2),
   ],
-  alignment: AlignmentType.JUSTIFIED,
 });
 
 function createTextRun(textContent, breakNum) {
   return new TextRun({
     text: textContent,
     font: "Calibri",
-    size: 20,
+    size: 25,
     break: breakNum,
   });
 }
