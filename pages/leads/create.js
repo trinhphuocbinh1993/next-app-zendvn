@@ -118,6 +118,8 @@ export default function Create() {
       "cusBillingAddress",
       cusBillingAddress
     );
+    console.log(`NODE_ENV=${process.env.NODE_ENV}`);
+    console.log(`HEROKU_DOMAIN=${process.env.HEROKU_DOMAIN}`);
     console.log(`${process.env.NEXT_PUBLIC_DOMAIN}/leads`);
     fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/leads`, {
       method: "POST",
