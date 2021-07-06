@@ -1,15 +1,5 @@
-import { useState } from "react";
+
 import Select from "react-select";
-import AsyncSelect from "react-select/Async";
-
-// const options = [
-//   { value: "chocolate", label: "Chocolate" },
-//   { value: "strawberry", label: "Strawberry" },
-//   { value: "vanilla", label: "Vanilla" },
-// ];
-
-// installAddress={installAddress}
-// getInstallAddress={(event) => setInstallAddress(event)}
 
 function RsCounty(props) {
   const { data, id, value, onChange } = props;
@@ -19,9 +9,6 @@ function RsCounty(props) {
     label: x.name,
   }));
 
-  // function inputHandleChange(selectedOption) {
-  //   console.log(`inputHandleChange:`, selectedOption);
-  // }
   function handleChange(selectedOption) {
     onChange(selectedOption);
   }
@@ -38,7 +25,6 @@ function RsCounty(props) {
         instanceId={id}
         options={dataFilter}
         onChange={handleChange}
-        // onInputChange={inputHandleChange}
         value={dataFilter.filter((x) => x.value === value.value)}
       />
     </div>

@@ -1,15 +1,4 @@
-import { useState } from "react";
 import Select from "react-select";
-import AsyncSelect from "react-select/Async";
-
-// const options = [
-//   { value: "chocolate", label: "Chocolate" },
-//   { value: "strawberry", label: "Strawberry" },
-//   { value: "vanilla", label: "Vanilla" },
-// ];
-
-// installAddress={installAddress}
-// getInstallAddress={(event) => setInstallAddress(event)}
 
 function RsCounty(props) {
   const { data, id, value, onChange, editPage } = props;
@@ -60,9 +49,6 @@ function RsCounty(props) {
     },
   ];
 
-  //const [selectedOption, setSelectedOption] = useState(null);
-
-  // function inputHandleChange(selectedOption) {}
   function handleChange(selectedOption) {
     onChange(selectedOption);
   }
@@ -79,7 +65,6 @@ function RsCounty(props) {
         instanceId={id}
         options={groupedOptions}
         onChange={handleChange}
-        // onInputChange={inputHandleChange}
         value={
           editPage
             ? data

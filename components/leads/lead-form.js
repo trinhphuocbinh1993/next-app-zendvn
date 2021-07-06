@@ -1,7 +1,6 @@
 import {
   SearchIcon,
   LocationMarkerIcon,
-  CalendarIcon,
 } from "@heroicons/react/solid";
 import { useState } from "react";
 import { Switch } from "@headlessui/react";
@@ -11,7 +10,6 @@ import ReactSelect from "./lead-create/react-select";
 import RsCounty from "./lead-create/rs-county";
 import RsCommon from "./lead-create/lead-info/rs-common";
 import { insertOne, updateOne } from "../../lib/common-fetch";
-import Select from "react-select";
 import Link from "next/link";
 
 function classNames(...classes) {
