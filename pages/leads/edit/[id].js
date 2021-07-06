@@ -1,16 +1,29 @@
-import { getAll } from "../../lib/common-fetch";
-import LeadForm from "../../components/leads/lead-form";
+import LeadDetail from "../../../components/leads/lead-index/lead-detail/lead-detail-body";
+import { getAll, getById } from "../../../lib/common-fetch";
 
-function LeadCreatePage(props) {
-  return <LeadForm data={props} />;
+function EditPage(props) {
+  return <LeadDetail data={props} />;
 }
 
-export async function getStaticProps() {
+export async function getStaticPaths() {
+  const res = await getAll("/leads");
+  const leads = res.data;
+  const paths = leads.map((lead) => ({
+    params: { id: lead.id.toString() },
+  }));
+
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
+  const res = await getById("/leads/", params.id);
+  const lead = res.data;
   const allCustomers = await getAll("/customers");
   const allCounty = await getAll("/county");
   const allCountry = await getAll("/country");
   const allLeadType = await getAll("/lead-info/lead-type");
   const allLeadSource = await getAll("/lead-info/lead-source");
+  const allLeadSubSource = await getAll("/lead-info/lead-sub-source");
   const allSalesArea = await getAll("/lead-info/sales-area");
   const allProductType = await getAll("/lead-info/product-type");
   const allMainInterest = await getAll("/lead-info/main-interest");
@@ -22,13 +35,16 @@ export async function getStaticProps() {
   const leadPipeline = allPipeline.find(
     (x) => x.name === "Standard Lead Pipeline"
   );
+
   return {
     props: {
+      lead,
       allCustomers,
       allCounty,
       allCountry,
       allLeadType,
       allLeadSource,
+      allLeadSubSource,
       allSalesArea,
       allProductType,
       allMainInterest,
@@ -42,4 +58,4 @@ export async function getStaticProps() {
   };
 }
 
-export default LeadCreatePage;
+export default EditPage;
