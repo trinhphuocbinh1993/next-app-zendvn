@@ -1,7 +1,4 @@
-import {
-  SearchIcon,
-  LocationMarkerIcon,
-} from "@heroicons/react/solid";
+import { SearchIcon, LocationMarkerIcon } from "@heroicons/react/solid";
 import { useState } from "react";
 import { Switch } from "@headlessui/react";
 import DatePicker from "react-datepicker";
@@ -434,8 +431,8 @@ function LeadForm(props) {
   }
 
   return (
-    <div className="container bg-gray-100 mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="space-y-6 pt-10 pb-10">
+    <div className="container mx-auto">
+      <div class="space-y-6 py-6">
         <div className="flex justify-between">
           <div className="justify-start">
             <Link href="/leads">

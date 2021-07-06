@@ -56,10 +56,10 @@ function LeadItem(props) {
           </td>
           <td className="px-6 py-4 whitespace-nowrap">
             <div className="text-sm text-gray-900">
-              Created date: {formattedDate(x.created_date)}
+              Created: {formattedDate(x.created_date)}
             </div>
             <div className="text-sm text-gray-500">
-              Updated date:{" "}
+              Updated:{" "}
               {x.updated_date ? formattedDate(x.created_date) : <i>null</i>}
             </div>
           </td>
