@@ -19,6 +19,7 @@ const navigation = [
   { name: "Blog", href: "/blog" },
   { name: "Contact", href: "/contact" },
   { name: "Contract", href: "/contract" },
+  { name: "Diary", href: "/diary" },
 ];
 const userNavigation = [
   { name: "Your Profile", href: "#" },

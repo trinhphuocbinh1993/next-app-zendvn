@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\components",
+    "\\components\\diary",
+    "\\components\\leads",
+    "\\components\\leads\\lead-create"
   ],
-  "SelectedNode": "\\a.js",
+  "SelectedNode": "\\components\\diary\\react-big-calendar.js",
   "PreviewInSolutionExplorer": false
 }
